@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Express Store | Dashboard Modern{% endblock %}</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-blue-500 selection:text-white">
+
+    <!-- Navigation Bar -->
+    <nav class="border-b border-slate-800 bg-slate-900/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="h-9 w-9 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center font-bold text-lg shadow-lg shadow-blue-600/30">
+                    <i class="fa-solid fa-bolt text-white"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-white">
+                    Express Store
+                </span>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="/" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition">
+                    <i class="fa-solid fa-house mr-2 text-blue-400"></i>Accueil
+                </a>
+                <a href="/docs" target="_blank" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition">
+                    <i class="fa-solid fa-book mr-2 text-amber-400"></i>API Swagger
+                </a>
+                <button class="px-4 py-2 text-sm font-semibold rounded-xl bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/25 transition-all">
+                    <i class="fa-solid fa-plus mr-2"></i>Nouveau Produit
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Injection Block -->
+    <main class="flex-grow">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer Professionnel -->
+    <footer class="border-t border-slate-800/80 bg-slate-900/40 py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <p>© 2026 - Développé avec FastAPI, SQLModel & Tailwind CSS.</p>
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full bg-emerald-500"></span> Système Opérationnel</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

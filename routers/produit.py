@@ -2,8 +2,8 @@ from fastapi import APIRouter , Depends
 from database import get_db
 from sqlmodel import Session
 from typing import List
-from services import get_product, create_product
-from schemas import ProductCreate , ProductResponse
+from services.create_product import get_product, create_product
+from schemas.schemas import ProductCreate , ProductResponse
 router=APIRouter(prefix="/produits" , tags=["Produits"])
 @router.post("/" , response_model=ProductResponse)
 def create_new_produit(product:ProductCreate ,db :Session=Depends(get_db)):

@@ -1,23 +1,24 @@
-# 🚀 FastAPI Modular E-Commerce API
+# 🚀 Express Store - SaaS E-Commerce Platform
 
-API REST modulaire et performante développée avec **FastAPI**, **SQLModel** et **SQLite**, conçue selon les principes de l'architecture propre (Separation of Concerns). Ce projet sert de backend robuste pour des applications e-commerce et des solutions de gestion de stock, ciblant notamment la digitalisation des commerces locaux.
+Plateforme e-commerce Full-Stack moderne conçue pour le marché local et régional, développée avec une architecture propre et des technologies de pointe.
 
 ## 🛠️ Stack Technique
 
-* **Framework :** FastAPI (Python)
-* **ORM & Base de données :** SQLModel / SQLite
-* **Validation des données :** Pydantic v2
-* **Architecture :** Modulaire (Séparation des routes, services, modèles et schémas)
+* **Backend** : FastAPI (Python)
+* **Base de données & ORM** : SQLite & SQLModel
+* **Moteur de Templates** : Jinja2 (Server-Side Rendering)
+* **Design & UI** : Tailwind CSS (Mode Sombre / Dark Mode)
+* **Serveur ASGI** : Uvicorn
 
 ## 📂 Structure du Projet
 
 ```text
-.
-├── database.py         # Configuration de la connexion et session BDD
-├── models.py           # Modèles SQLModel (Tables: Category, Product)
-├── schemas.py          # Schémas Pydantic (Entrées et Sorties)
-├── services.py         # Logique métier et interactions CRUD
-├── routers/
-│   ├── categories.py   # Endpoints REST pour les catégories
-│   └── produits.py     # Endpoints REST pour les produits
-└── main.py             # Point d'entrée de l'application FastAPI
+express-store-saas/
+├── main.py              # Point d'entrée FastAPI & configuration Jinja2/Static
+├── database.py          # Configuration de la base de données SQLite
+├── models.py            # Modèles SQLModel (Produits, Catégories)
+├── schemas.py           # Schémas Pydantic pour la validation
+├── services/            # Logique métier et interactions avec la base de données
+├── routers/             # Routeurs API REST (Produits, Catégories)
+├── templates/           # Fichiers HTML Jinja2 (base.html, index.html)
+└── static/              # Fichiers statiques (CSS, JS, Images)

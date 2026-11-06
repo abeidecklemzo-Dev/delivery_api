@@ -1,6 +1,6 @@
 from sqlmodel import Session , select
 from models import Product
-from schemas import ProductCreate
+from schemas.schemas import ProductCreate
 def create_product(db:Session , product:ProductCreate):
     produits=Product.model_validate(product)
     db.add(produits) 

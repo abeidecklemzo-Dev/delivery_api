@@ -1,4 +1,4 @@
-from schemas import CategoryCreate 
+from schemas.schemas  import CategoryCreate 
 from models import Category , Product
 from sqlmodel import Session , select
 def create_category(db : Session , category:CategoryCreate):

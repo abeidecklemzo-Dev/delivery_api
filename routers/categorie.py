@@ -1,9 +1,9 @@
 from fastapi import APIRouter , Depends
 from database import get_db 
 from typing import List
-from services import create_category , get_categories
+from services.create_category import create_category , get_categories
 from sqlmodel import Session 
-from schemas import CategoryCreate ,CategoryResponse
+from schemas.schemas import CategoryCreate ,CategoryResponse
 router=APIRouter(prefix="/categories" , tags=["Categories"])
 @router.post("/" , response_model=CategoryResponse)
 def create_new_category(category:CategoryCreate , db :Session =Depends(get_db)):
